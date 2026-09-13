@@ -19,6 +19,7 @@ INSERT INTO user_transactions (transaction_id, user_id, transaction_date, amount
 
 SELECT user_id, 
        transaction_date, 
+       
        ROUND(AVG(amount) OVER(
            PARTITION BY user_id
            ORDER BY transaction_date
