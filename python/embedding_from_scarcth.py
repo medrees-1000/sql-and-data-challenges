@@ -395,3 +395,35 @@ collection.upsert(
 # --- Deleting items or wiping the whole database ---
 collection.delete(ids=["id-1", "id-2"])
 client.reset()  # WARNING: deletes everything in the database
+
+
+
+
+
+
+
+
+
+
+
+
+
+reviews.columns
+
+
+reviews.isnull().sum()
+
+len(reviews['Review Text'])
+
+reviews.dropna(subset=['Review Text'], ignore_index=True, inplace=True)   
+
+def create_embeddings(texts):
+    response = client.embeddings.create(
+        model="text-embedding-3-small",
+        input=texts
+    )
+    response_dict = response.model_dump()
+    return [data['embedding'] for data in response_dict['data']]
+
+reviews_text = reviews['Review Text'].tolist()
+embeddings = create_embeddings(reviews_text)
