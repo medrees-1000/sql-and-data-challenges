@@ -118,3 +118,110 @@
 //   console.log("Upgrade or wait for tomorrow's free try.")
 // }
 
+
+// // State from a UI — use ternaries to pick the right text for each piece.
+
+// const isLoggedIn = true
+// const cartTotal = 0
+
+// // 1. Sign-in button label.
+// //    Assign a ternary to a const `label` — "Sign out" if logged in, otherwise "Sign in".
+// //    Then console.log the label.
+// const label = isLoggedIn ? "Sign out" : "Sign in"
+// console.log(label)
+// // 2. Cart status line.
+// //    Print a ternary that picks "Your cart is empty" when cartTotal is 0,
+// //    otherwise prints "Total: $<amount>" (use a template literal for the amount).
+// console.log(`${cartTotal === 0 ? "Your cart is empty" : `Total :${count} `}`)
+
+
+// A user's role from the database. Switch on it and print their access level.
+
+const role = "editor"
+
+// Build a switch statement on `role` that handles AT LEAST these three cases plus a default:
+//
+//   case "admin"   → "Full access — you control the universe."
+//   case "editor"  → "Can edit content."
+//   case "viewer"  → "Read-only — sit back and watch."
+//   default        → "Unknown role — contact support."
+//
+// Remember: every case needs `break` so it doesn't fall through to the next one.
+
+// switch (role) {
+//   case "admin":
+//     console.log("Full access - you control the computer")
+//     break 
+//   case "editor":
+//     console.log("Can edit content")
+//     break
+//   case "viewer":
+//     console.log("Read only - sit back and watch")
+//     break
+//   default:
+//     console.log("Unknown role - contact support")
+// }
+
+
+// Coffee shop receipt — three items, tax, and a free-shipping rule.
+
+const item1Name = "Cappuccino"
+const item1Price = 4.5
+
+const item2Name = "Croissant"
+const item2Price = 3.25
+
+const item3Name = "Sandwich"
+const item3Price = 8.99
+
+const taxRate = 0.08
+const flatShippingFee = 4.99
+const freeShippingThreshold = 20
+
+// 1. Compute the subtotal — sum of the three item prices.
+let subtotal = item1Price+item2Price+ item3Price
+subtotal = Number(subtotal.toFixed(2))
+console.log(`Total is ${subtotal}`)
+
+// 2. Compute the tax — subtotal × taxRate.
+let tax = subtotal * taxRate
+tax = Number(tax.toFixed(2))
+console.log(`Total tax is ${tax}`)
+// 3. Apply the shipping rule (use `if`/`else` OR a ternary):
+//    - If subtotal >= freeShippingThreshold, shipping is 0.
+//    - Otherwise, shipping is flatShippingFee.
+let shipping;
+if (subtotal >= freeShippingThreshold){
+  shipping = 0
+  console.log(`Total shipping is ${shipping}`)
+} else{
+  shipping = flatShippingFee
+  console.log(`Total shipping is ${shipping}`)
+}
+
+// 4. Compute the total — subtotal + tax + shipping.
+let total = subtotal + tax + shipping
+console.log(`Total for this order is ${total}`)
+
+// 5. Print the receipt — at least 5 console.log calls:
+//      - A header line (e.g. "=== Receipt ===")
+//      - One line per item (use template literals so the name and price appear together)
+//      - A subtotal line
+//      - A tax line
+//      - A shipping line (show "FREE" when shipping is 0 — use a ternary)
+//      - A total line
+//
+//    Tip: `someNumber.toFixed(2)` formats a number to exactly 2 decimals.
+console.log("=== Receipt ===")
+console.log(`${item1Name}    $${item1Price}`)
+console.log(`${item2Name}    $${item2Price}`)
+console.log(`${item3Name}    $${item3Price}`)
+console.log("---------------------")
+console.log(`Subtotal        $${subtotal}`)
+console.log(`Tax (%8)        $${tax}`)
+console.log(`Shipping        ${shipping === 0 ? "Free" : `$${shipping}`}`)
+console.log("---------------------")
+console.log(`Total           $${total}`)
+console.log("=== Thanks! ===")
+
+
