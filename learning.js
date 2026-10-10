@@ -225,3 +225,90 @@ console.log(`Total           $${total}`)
 console.log("=== Thanks! ===")
 
 
+
+
+
+
+
+
+
+
+// A music playlist.
+
+// 1. Create a const called `playlist` and put these 4 songs in it as strings:
+//    "Bohemian Rhapsody", "Stairway to Heaven", "Hotel California", "Imagine"
+//    Then console.log the first song (index 0).
+const playlist = ["Bohemian Rhapsody", "Stairway to Heaven", "Hotel California", "Imagine"]
+console.log(playlist[0])
+
+// 2. Print the song at index 2.
+console.log(playlist[2])
+
+// 3. Print the last song using playlist.length - 1.
+console.log(playlist[playlist.length - 1])
+
+
+
+// A small to-do list. Grow it at both ends, then shrink it back.
+
+const todos = ["Walk the dog", "Buy groceries"]
+
+// 1. Use push to add "Reply to emails" to the end of the list,
+//    then console.log the whole todos array.
+todos.push("Reply to emails")
+console.log(todos)
+
+
+// 2. Use unshift to add "Make coffee" to the beginning of the list,
+//    then console.log the whole todos array.
+todos.unshift("Make coffee")
+console.log(todos)
+// 3. Use pop to remove the last item, and console.log what pop returned.
+console.log(todos.pop())
+
+// 4. Use shift to remove the first item, and console.log what shift returned.
+console.log(todos.shift())
+
+
+
+
+
+// A guest list for an event. Search it.
+
+const guests = ["Alice", "Bob", "Charlie", "Diana", "Eve"]
+
+// 1. Use indexOf to find the index of "Charlie",
+//    and console.log the result.
+console.log(guests.indexOf("Charlie"))
+
+
+// 2. Use indexOf to look up "Frank" (not in the list),
+//    and console.log what you get back.
+console.log(guests.indexOf("Frank"))
+
+// 3. Use includes to check if "Diana" is on the list,
+//    and console.log the true/false result.
+console.log(guests.includes("Diana"))
+
+
+
+
+
+// A queue of songs. Copy part of it, then edit it in place.
+
+const queue = ["Song A", "Song B", "Song C", "Song D", "Song E", "Song F"]
+
+// 1. Use slice to grab the first 3 songs into a new array (store it
+//    in a const), then console.log that new array.
+const new_que = queue.slice(1,4)
+console.log(new_que)
+
+// 2. console.log the original queue to confirm slice did NOT change it.
+console.log(queue)
+
+// 3. Use splice to remove "Song C" and "Song D" (2 items starting at
+//    index 2). Capture what splice returns in a const and console.log it.
+const new_splice = queue.splice(2, 2)
+console.log(new_splice)
+
+
