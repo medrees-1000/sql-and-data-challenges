@@ -312,3 +312,30 @@ const new_splice = queue.splice(2, 2)
 console.log(new_splice)
 
 
+
+
+
+
+
+
+// Coupon code generator.
+const brand = "Traversy Media"
+const year = 2026
+
+// 1. Take the first 4 letters of `brand`, uppercase them, store as `prefix`.
+let prefix = brand.slice(0,4).toUpperCase()
+
+
+// 2. Generate a random 4-digit integer (1000 to 9999 inclusive),
+//    store as `code`. Use Math.floor(Math.random() * 9000) + 1000.
+let code = Math.floor(Math.random() * 9000) + 1000
+
+
+// 3. Build the coupon as `${prefix}-${year}-${code}` with a template literal.
+//    Print it.
+console.log(`${prefix}-${year}-${code}`)
+
+// 4. Print "Coupon valid for <year>!" using a template literal
+//    (interpolate `year`, don't hardcode it).
+console.log(`Coupon valid for ${year}!`)
+
