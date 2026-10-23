@@ -700,3 +700,42 @@ products.forEach(({title, category}) => {
 })
 
 
+
+const profile = {
+    name: "Sasha",
+    email: "sasha@example.com",
+    role: "admin",
+    badges: [], 
+    address: { city: "Boston", state: "MA" },
+    summary() {
+      const { name, role, email, address: { city, state } } = this
+      return `${name} (${role}): ${email} - ${city}, ${state}`
+    }
+}
+
+console.log(profile.summary())
+
+const updateEmail = (profile, newEmail) => {
+   return {
+     ...profile, 
+     email: newEmail
+   }
+}
+
+
+const awardBadge = (profile, badgeName) => {
+  return {
+    ...profile,
+    badges: [...profile.badges, badgeName]
+  }
+}
+
+
+
+const updated = updateEmail(profile, "sasha@traversymedia.com")
+console.log(updated.summary())
+console.log("Original email still:" + profile.email)
+const withBadge = awardBadge(profile, "early-adopter")
+console.log("Badges", withBadge.badges)
+console.log("Original badges still: ", profile.badges)
+
