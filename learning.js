@@ -339,3 +339,307 @@ console.log(`${prefix}-${year}-${code}`)
 //    (interpolate `year`, don't hardcode it).
 console.log(`Coupon valid for ${year}!`)
 
+
+
+
+// // 1. Declare a function called `greet` that prints "Hello, world!".
+// //    Call it once.
+function greet() {
+  console.log("Hello, world!")
+}
+greet()
+// 2. Declare a function called `printSeparator` that prints "---".
+//    Call it three times.
+function printSeparator(){
+  console.log("---")
+}
+printSeparator()
+printSeparator()
+printSeparator()
+
+// 1. Declare a function `greetUser(name)` that prints "Hello, <name>!"
+//    using a template literal. Call it three times with "Brad", "Sara", "Mike".
+function greetUser(name){
+  console.log(`Hello, ${name}!`)
+}
+greetUser("Brad")
+greetUser("Sara")
+greetUser("Mike")
+// 2. Declare a function `describePerson(name, age, city)` that prints
+//    "<name> is <age> and lives in <city>.".
+//    Call it once with "Jen", 28, "Boston".
+function describePerson(name, age, city){
+  console.log(`${name} is ${age} and lives in ${city}`)
+}
+describePerson("Jen", 28, "Boston")
+
+
+
+
+// // 1. Declare `add(a, b)` that RETURNS a + b.
+// //    Call it with 2, 3. Store the result in `const sum`. Print sum.
+function add(a, b){
+  return a+b
+}
+const sum = add(2, 3)
+console.log(sum)
+// 2. Declare `isAdult(age)` that RETURNS true if age >= 18, else false.
+//    Store `isAdult(20)` in `const adult20` and `isAdult(15)` in `const adult15`.
+function isAdult(age){
+  if (age >= 18){
+    return true
+  }
+  else{
+    return false
+  }
+}
+const adult20=isAdult(20)
+const adult15=isAdult(15)
+
+//    Print both.
+console.log(adult20, adult15)
+
+
+
+// 1. Declare `triple` as an arrow function with IMPLICIT return.
+//    Takes one number, returns it * 3. Call with 4 and print.
+let triple = (n) => n * 3
+console.log(triple(4))
+
+// 2. Declare `add` as an arrow function with EXPLICIT return (braces + return).
+//    Takes `a` and `b`, returns a + b. Call with 5, 8 an
+const add = (a, b) => {
+  return a  + b
+}
+console.log(add(5, 8))
+
+// 1. Declare `priceWithTax(price, rate = 0.08)` that RETURNS price * (1 + rate).
+//    Call with 100 (uses default), then with 100, 0.20. Print both results.
+function priceWithTax(price, rate = 0.08) {
+  return price * (1 + rate)
+}
+console.log(priceWithTax(100))
+console.log(priceWithTax(100, 0.20))
+// 2. Declare `sum(...numbers)` that totals every number passed in
+//    using a for...of loop, and RETURNS the total.
+//    Call sum(1, 2, 3), sum(10, 20, 30, 40), and sum().
+//    Print all three results.
+function sum(...numbers){
+  let total = 0
+  for (const n of numbers){
+    total+= n
+  }
+  return total
+}
+console.log(sum(1,2, 3))
+console.log(sum(10,20,30,40))
+console.log(sum())
+
+// 1. Declare `const siteName = "Start.dev"` at the top of the file.
+//    Then declare a function `printWelcome(visitor)` that prints
+//    "Welcome to <siteName>, <visitor>!" using a template literal.
+//    `siteName` is NOT a parameter, read it from outer scope.
+//    Call printWelcome("Brad").
+const siteName = "Start.dev"
+function printWelcome(visitor){
+  return `Welcome to ${siteName}, ${visitor}!`
+}
+console.log(printWelcome("Brad"))
+// 2. Declare a function `secret()` with a `const code = 12345` INSIDE its body.
+function secret(){
+  const code = 12345
+  console.log(code);
+}
+//    Print `code` from inside the function. Call secret().
+secret();
+
+// A callback defined for you. Don't change it.
+const step = () => console.log("Step.")
+
+// 1. Write `repeatThree(action)` that calls action() three times.
+function repeatThree(action){
+  action()
+  action()
+  action()
+}
+
+// 2. Call repeatThree with step.
+repeatThree(step)
+
+// 3. Call repeatThree with an inline arrow callback that prints "Final move!"
+repeatThree(() => console.log("Final move!"))
+
+
+// An array of fruit. Use forEach to walk it.
+const fruits = ["apple", "banana", "cherry"]
+
+// 1. Use forEach on `fruits` to print each fruit on its own line.
+fruits.forEach((fruit) => {
+  console.log(fruit)
+})
+
+// 2. Use forEach on `fruits` again, this time with TWO callback parameters
+//    (item AND index). Print "<index + 1>. <fruit>", e.g. "1. apple".
+fruits.forEach((item, index) => {
+  console.log(`${index + 1}. ${item}`)
+})
+
+
+// Tip Calculator.
+//
+// Build `tipCalculator(bill, tipPercent = 15)` that prints three lines:
+//   - Bill: $<bill>
+//   - Tip (<tipPercent>%): $<tip with 2 decimals>
+//   - Total: $<total with 2 decimals>
+//
+// Then call it twice:
+//   tipCalculator(50)        — uses default 15%
+//   tipCalculator(80, 20)    — overrides to 20%
+
+function tipCalculator(bill, tipPercent = 15){
+console.log(`Bill: $${bill}
+Tip (${tipPercent}%): $${((tipPercent / 100) * bill).toFixed(2)}
+Total: $${(bill + ((tipPercent / 100) * bill)).toFixed(2)}`)
+}
+
+tipCalculator(50)
+tipCalculator(80, 20)
+
+// 1. Create a `user` object with these properties:
+//    - name: "Sasha"
+//    - email: "sasha@example.com"
+//    - age: 27
+//    - isAdmin: false
+const user = {
+       name: "Sasha",
+       email: "sasha@example.com",
+       age: 27,
+       isAdmin: false
+}
+
+// 2. Log the user's name using dot notation.
+console.log(user.name)
+
+// 3. Use this variable to log the user's age with bracket notation:
+const fieldToShow = "age"
+console.log(user[fieldToShow])
+
+
+// A student profile object.
+const student = {
+  name: "Marcus",
+  grade: "Sophomore",
+  major: "Data Science"
+}
+
+// 1. Update the student's `grade` to "Junior".
+// 2. Add a new property `gpa` with a value of 3.8 using dot notation.
+// 3. Add a new property `isEnrolled` with a value of true using bracket notation ("isEnrolled").
+// 4. Delete the `major` property from the object.
+// 5. Print the final `student` object.
+
+student.grade = "Junior"
+student.gpa=3.8
+student["isEnrolled"] = true
+delete student.major
+console.log(student)
+
+
+// You're given this user object:
+const user4 = {
+  name: "Sasha",
+  email: "sasha@example.com",
+  age: 27,
+}
+
+// 1. Add a `role` property with value "admin".
+user4.role = "admin"
+
+// 2. Update the existing `age` property to 28.
+user4.age = 28
+
+// 3. Use `delete` to remove the `email` property.
+delete user4.email
+
+// 4. Log the final user object.
+console.log(user4)
+
+
+// // You're given this user. Add 2 methods inside the object literal.
+const user1 = {
+  firstName: "Sasha",
+  lastName: "Chen",
+  age: 27,
+
+  // 1. greet() — logs "Hi, I'm <firstName>" using `this.firstName`
+  greet() {
+    console.log(`Hi, I'm ${this.firstName}`)
+  },
+
+  // 2. fullName() — returns "<firstName> <lastName>"
+  fullName() {
+    return `${this.firstName} ${this.lastName}`
+  }
+
+}
+
+// 3. Call user.greet(), then log user.fullName().
+user1.greet()
+console.log(user1.fullName())
+
+
+
+// // You're given this user with nested address, preferences, and a tags array.
+const user2 = {
+  name: "Sasha",
+  email: "sasha@example.com",
+  address: {
+    city: "Boston",
+    state: "MA",
+    zip: "02108",
+  },
+  preferences: {
+    theme: "dark",
+    notifications: true,
+  },
+  tags: ["frontend", "react", "design"],
+}
+
+// 1. Log the user's city.
+console.log(user2.address.city)
+
+// 2. Update the user's zip to "02101".
+user2.address.zip = "02101"
+
+
+// 3. Log the FIRST tag in the user's tags array (use index access).
+console.log(user2.tags[0])
+
+// 4. Log the entire updated user object.
+console.log(user2)
+
+
+// You're given these two users:
+const user3 = {
+  name: "Sasha",
+  email: "sasha@example.com",
+  age: 27,
+  role: "admin",
+}
+
+const guest = {
+  name: "Anna",
+  email: "anna@example.com",
+  // no `role` property
+}
+
+// 1. Destructure `name` and `email` from `user` in ONE statement. Log each.
+
+
+// 2. Destructure `age` from `user` but rename it to `userAge`. Log `userAge`.
+
+
+// 3. Destructure `role` from `guest` with a default of "member". Log it.
+
+
+
