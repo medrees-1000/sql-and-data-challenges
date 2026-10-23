@@ -634,12 +634,15 @@ const guest = {
 }
 
 // 1. Destructure `name` and `email` from `user` in ONE statement. Log each.
-
-
+const {name, email} = user3
+console.log(name)
+console.log(email)
 // 2. Destructure `age` from `user` but rename it to `userAge`. Log `userAge`.
-
-
+const {age : userAge} = user3
+console.log(userAge)
 // 3. Destructure `role` from `guest` with a default of "member". Log it.
+// const {role="member"} = guest
+// console.log(role)
 
 
 
