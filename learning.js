@@ -680,3 +680,23 @@ console.log(user5.role)
 
 
 
+// An array of product objects.
+const products = [
+  { title: "Keyboard", category: "tech", stock: 8 },
+  { title: "Mug", category: "kitchen", stock: 15 },
+  { title: "Notebook", category: "office", stock: 22 },
+]
+
+// 1. Use forEach to print each product's title on its own line.
+products.forEach((product) => {
+  console.log(`${product.title}`)
+})
+
+// 2. Use forEach with destructuring in the callback parameter
+//    to print "<title> [<category>]" for each product.
+//    Pattern: ({ title, category }) => ...
+products.forEach(({title, category}) => {
+  console.log(`${title} [${category}]`)
+})
+
+
