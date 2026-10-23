@@ -646,3 +646,37 @@ console.log(userAge)
 
 
 
+
+
+// You're given this user. Do NOT mutate it.
+const user5 = {
+  name: "Sasha",
+  email: "sasha@example.com",
+  age: 27,
+  role: "member",
+}
+
+const defaults = {
+  theme: "light",
+  notifications: true,
+  lang: "en",
+}
+
+const overrides = {
+  theme: "dark",
+}
+
+// 1. Make `updatedUser` — a copy of user with role: "admin". Use spread.
+//    Then console.log it.
+const updatedUser = {...user5, role:"admin" }
+console.log(updatedUser)
+
+// 2. Make `settings` — combine defaults and overrides with spread.
+//    Overrides should win. Then console.log it.
+const settings = {...defaults, ...overrides}
+console.log(settings)
+// 3. Log user.role to prove the original is unchanged. (Expect: "member")
+console.log(user5.role)
+
+
+
