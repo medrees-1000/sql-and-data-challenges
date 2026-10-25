@@ -739,3 +739,4 @@ const withBadge = awardBadge(profile, "early-adopter")
 console.log("Badges", withBadge.badges)
 console.log("Original badges still: ", profile.badges)
 
+console.log(updated)

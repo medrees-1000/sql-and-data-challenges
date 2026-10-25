@@ -38,3 +38,5 @@ for score in scores.copy():
         del scores[score]
         
 print(scores)
+
+
