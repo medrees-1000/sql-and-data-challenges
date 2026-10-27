@@ -740,3 +740,4 @@ console.log("Badges", withBadge.badges)
 console.log("Original badges still: ", profile.badges)
 
 console.log(updated)
+
