@@ -179,3 +179,32 @@ async function loadCompany(){
 }
 
 loadCompany()
+
+
+
+// users/99999 does not exist, so the server answers with a 404.
+
+// Write an async function called loadUser. Inside it:
+//   1. in a try block, await fetch the URL below, and if response.ok is false, throw an error
+//   2. still in the try, await response.json() and print the user's name
+//   3. in the catch block, print "Could not load user"
+// Then call loadUser() on its own line below the function.
+//   Expected: Could not load user
+//
+// URL: https://jsonplaceholder.typicode.com/users/99999
+
+async function loadUser(){
+    try{
+        const response = await fetch("https://jsonplaceholder.typicode.com/users/99999")
+        if(!response.ok){
+            throw new Error("Request Failed" + response.status)
+        }
+        const user = await response.json()
+        console.log(user.name)
+    }
+    catch(error){
+        console.log("Could not load user")
+    }
+}
+
+loadUser()
