@@ -46,3 +46,25 @@ loadProfile()
    .catch((error)=>{
     console.log(error)
    })
+
+
+// getOrder() is already written for you. It returns a promise that
+// resolves with an order after a short delay. You do not need to change it.
+
+function getOrder() {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve({ id: 7, total: 90 }), 300)
+  })
+}
+
+// 1. Write an async function called showTotal that awaits getOrder()
+//    and prints the order's total.
+// 2. Call showTotal().
+//    Expected: 90
+
+async function showTotal(){
+    const {total} = await getOrder()
+    console.log(total)
+}
+
+showTotal()
