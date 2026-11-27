@@ -17,3 +17,32 @@ console.log("You can keep working...")
 // but it prints LAST, because setTimeout defers it until the synchronous
 // lines have finished.
 //   Expected order: Sending... / You can keep working... / Message sent!
+
+
+// Two requests, already written for you. You do not need to change them.
+// loadProfile() succeeds. loadSettings() fails (the service is down).
+
+function loadProfile() {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve({ name: "Ada" }), 300)
+  })
+}
+
+function loadSettings() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => reject("settings service is down"), 300)
+  })
+}
+
+// 1. Call loadProfile(). With .then, print the profile's name.
+//    Expected: Ada
+loadProfile()
+   .then((profile)=> {
+    console.log(profile.name)
+   })
+
+// 2. Call loadSettings(). With .catch, print the rejection error it receives.
+//    Expected: settings service is down
+   .catch((error)=>{
+    console.log(error)
+   })
