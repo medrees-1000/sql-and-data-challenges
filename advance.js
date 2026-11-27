@@ -35,3 +35,14 @@ const ranked = [...movies].sort((a, b) => b.rating - a.rating)
 const top3 = ranked.slice(0, 3)
 const titles = top3.map(({ title }) => title).join(", ")
 console.log(`Top 3 by rating: ${titles}`)
+
+
+
+// Add the final line: the movie to watch next.
+// 1. filter movies down to the unwatched ones (!movie.watched).
+// 2. Sort that array by rating, highest first, and take the first item.
+// 3. Print its title, like:  Watch next: The Dark Knight
+
+const unwatched = movies.filter((movies) => !movies.watched)
+const nextUp = unwatched.sort((a, b) => b.rating-a.rating)[0]
+console.log("Watch nex: " + nextUp.title)
