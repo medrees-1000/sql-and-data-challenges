@@ -152,3 +152,30 @@ async function loadPosts() {
 }
  
 loadPosts()
+
+
+
+
+
+// /users/1 returns one user with a nested company object (which has a name),
+// but no slogan field.
+
+// Write an async function called loadCompany. Inside it:
+//   1. await fetch https://jsonplaceholder.typicode.com/users/1
+//   2. await response.json() into a user object
+//   3. print the company name with optional chaining: user.company?.name
+//   4. the user has no slogan, so print user.company?.slogan with a ?? fallback of "No slogan"
+// Then call loadCompany() on its own line below the function.
+//   Expected:
+//     Romaguera-Crona
+//     No slogan
+
+
+async function loadCompany(){
+    const response = await fetch("https://jsonplaceholder.typicode.com/users/1")
+    const user = await response.json()
+    console.log(user.company?.name)
+    console.log(user.company?.slogan ?? "No slogan") 
+}
+
+loadCompany()
