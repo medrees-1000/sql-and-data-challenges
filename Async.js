@@ -130,3 +130,25 @@ async function load(){
 }
 
 load()
+
+
+
+// /posts returns an array of 100 blog posts, each shaped like
+// { userId, id, title, body }.
+
+// Write an async function called loadPosts. Inside it:
+//   1. await fetch https://jsonplaceholder.typicode.com/posts
+//   2. await response.json() to get the array of posts
+//   3. use filter to build userPosts: only the posts whose userId is 1
+//   4. print how many there are (userPosts.length)
+// Then call loadPosts() on its own line below the function.
+//   Expected: 10
+
+async function loadPosts() {
+  const response = await fetch("https://jsonplaceholder.typicode.com/posts")
+  const posts = await response.json()
+  const userPosts = posts.filter((post) => post.userId === 1)
+  console.log(userPosts.length)
+}
+ 
+loadPosts()
