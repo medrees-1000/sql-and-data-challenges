@@ -68,3 +68,29 @@ async function showTotal(){
 }
 
 showTotal()
+
+
+// chargeCard() is already written for you. It returns a promise that
+// rejects, because the payment service is down. You do not change it.
+
+function chargeCard() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => reject("payment declined"), 300)
+  })
+}
+
+// Write an async function called pay. Inside it:
+//   1. in a try block, await chargeCard() and then print "Charged!"
+//   2. in the catch block, print the error it receives
+// Then call pay() on its own line below the function.
+//   Expected: payment declined
+async function pay() {
+    try{
+        const charged = await chargeCard()
+        console.log("Charged!") 
+    } catch(error){
+        console.log(error)
+    }
+}
+
+pay()
