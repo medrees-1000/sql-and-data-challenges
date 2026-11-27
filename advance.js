@@ -18,3 +18,15 @@ console.log("Total movies: " + movies.length)
 const Watched = movies.filter((n) => n["watched"] === true)
 console.log("Watched: " + Watched.length)
 console.log("Not watched: " + (movies.length - Watched.length))
+
+
+// Add the average rating to the report.
+// 1. Use reduce to add up every movie's rating, starting from 0.
+// 2. Divide by movies.length and round with toFixed(1).
+// 3. Print it, like:  Average rating: 8.7
+
+const total = movies.reduce((sum, movies) => sum + movies.rating, 0)
+console.log(total)
+
+const avg = (total/movies.length).toFixed(1)
+console.log(`Average rating ${avg}`)
