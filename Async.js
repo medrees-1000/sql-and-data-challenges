@@ -94,3 +94,39 @@ async function pay() {
 }
 
 pay()
+
+
+
+
+// Two requests, already written for you. Each resolves after a short
+// delay, and they do not depend on each other. You do not change them.
+
+function loadProfile() {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve({ name: "Ada" }), 300)
+  })
+}
+
+function loadPosts() {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(["Hello world", "Async is fun", "Promises 101"]), 300)
+  })
+}
+
+// Write an async function called load. Inside it:
+//   1. run BOTH requests at the same time with Promise.all
+//   2. pull the two results out with array destructuring
+//   3. print the profile's name and the number of posts (posts.length)
+// Then call load() on its own line below the function.
+//   Expected: Ada 3
+
+async function load(){
+    try{
+        const [Profile, posts] = await Promise.all([loadProfile(), loadPosts()])
+        console.log(Profile.name, posts.length)
+    } catch(error){
+        console.log(error)
+    }
+}
+
+load()
