@@ -30,3 +30,8 @@ console.log(total)
 
 const avg = (total/movies.length).toFixed(1)
 console.log(`Average rating ${avg}`)
+
+const ranked = [...movies].sort((a, b) => b.rating - a.rating)
+const top3 = ranked.slice(0, 3)
+const titles = top3.map(({ title }) => title).join(", ")
+console.log(`Top 3 by rating: ${titles}`)
